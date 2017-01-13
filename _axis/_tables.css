@@ -1,0 +1,64 @@
+/* ------ */
+/* Layout */
+/* ------ */
+
+:root {
+  /* Table todo: responsive? clean up grays */
+  --table-basic {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 100px;
+    max-width: 100%;
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 1px #c5cbd0;
+
+    & th,
+    & td {
+      border-top: 1px solid #c5cbd0;
+      line-height: 18px;
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    & th {
+      font-weight: bold;
+    }
+
+    & thead th {
+      vertical-align: bottom;
+      font-weight: 600;
+    }
+
+    & tbody + tbody {
+      border-top: 2px solid #c5cbd0;
+    }
+
+    & th + th {
+      border-left: 1px solid #c5cbd0;
+    }
+
+    & td + td,
+    & th + td,
+    & td + th {
+      border-left: 1px solid #c5cbd0
+    }
+
+    & tbody tr:nth-child(odd) td,
+    & tbody tr:nth-child(odd) th {
+      background: rgba(0,0,0,.03)
+    }
+
+    & tbody td {
+      vertical-align: middle
+    }
+  }
+
+  --tables {
+    table {
+      @apply --table-basic
+    }
+  }
+}

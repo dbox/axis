@@ -1,0 +1,398 @@
+/* ------ */
+/* Forms */
+/* ------ */
+
+:root {
+
+  /* Todo: Select (Q+A) */
+
+  --input {
+    @apply --transition;
+    font-size: var(--base-font-size);
+    font-weight: var(--base-font-weight);
+    border: var(--input-stroke) solid var(--input-border-color);
+    border-radius: var(--global-border-radius);
+    height: var(--input-height);
+    outline: none;
+    padding: var(--input-padding);
+    background: var(--input-bg-color);
+    font-family: var(--font-stack);
+    width: var(--input-width);
+    max-width: var(--input-max-width);
+    min-width: var(--input-min-width);
+    color: color(var(--base-gray) shade(50%));
+
+    &:hover {
+      border-color: var(--input-border-hover-color)
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 var(--input-focus-inset) var(--input-focus-color);
+      border: 1px solid var(--input-focus-color);
+      outline: none
+    }
+  }
+
+  --input-warning {
+    border-color: var(--color-warning);
+
+    &:focus {
+      border-color: color(var(--color-warning) a(50%));
+      box-shadow: 0 0 .6rem color(var(--color-warning) a(50%))
+    }
+  }
+
+  --autofill {
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
+      -webkit-text-fill-color: var(--input-autofill-color)
+    }
+
+    &:-moz-autofill {
+      -moz-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
+      -moz-text-fill-color: var(--input-autofill-color)
+    }
+
+    &:-o-autofill {
+      -o-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
+      -o-text-fill-color: var(--input-autofill-color)
+    }
+
+    &:-khtml-autofill {
+      -khtml-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
+      -khtml-text-fill-color: var(--input-autofill-color)
+    }
+  }
+
+  --label {
+    display: var(--label-display);
+    text-align: var(--label-align);
+    min-width: var(--label-min-width)
+  }
+
+  --file-upload {
+    cursor: pointer;
+    line-height: 1em;
+    text-decoration: none;
+    display: inline-block;
+    border: var(--button-outline-stroke) solid var(--button-color);
+    border-radius: var(--global-border-radius);
+    outline: 0;
+    padding: .4rem;
+    position: relative;
+    width: 200px;
+    color: var(--button-text-color);
+
+    &:after {
+      text-align: center;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--button-color);
+      content: 'Choose a file ...';
+      padding: calc(var(--button-med-size) * .6) calc(var(--button-med-size) * .8);
+
+
+    }
+    &:hover:after, &:active:after {
+      background-color: color(var(--button-color) shade(20%));
+    }
+  }
+
+  --fieldset {
+    border: var(--fieldset-border);
+    border-radius: var(--global-border-radius)
+  }
+
+  /* select box */
+  /* Must be applied to element wrapping <select> tag. */
+  /* TODO: ie 10 + 11 support ? */
+
+  /*todo: focus highlight*/
+  --select-box {
+    position: relative;
+    display: inline-block;
+    width: var(--input-width);
+    min-width: var(--input-min-width);
+    max-width: var(--input-max-width);
+    border-radius: var(--global-border-radius);
+    /*max-width: var(--input-max-width) */
+
+    & select {
+      width: 100%;
+      margin: 0;
+      outline: none;
+      padding: var(--input-padding);
+      font-size: var(--base-font-size); /*anything except 16px will create page zoom on ios */
+      border: none;
+
+      &:focus, &:active {
+        border: none;
+        box-shadow: none
+      }
+
+      & option {
+        padding: .3rem .7rem
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(50% - (var(--input-select-arrow-size) / 2));
+      right: .75em;
+      z-index: 2;
+      display: none;
+      pointer-events: none
+    }
+
+    @supports ( -webkit-appearance: none ) or ( appearance: none ) or ( ( -moz-appearance: none ) and ( mask-type: alpha ) ) {
+      border: var(--fieldset-border);
+
+      &:after {
+        display: block;
+        border-left: var(--input-select-arrow-size) solid transparent;
+        border-right: var(--input-select-arrow-size) solid transparent;
+        border-top: var(--input-select-arrow-size) solid var(--input-select-arrow-color)
+      }
+
+      & select {
+        border-radius: var(--global-border-radius);
+        border: var(--input-stroke) solid color(var(--base-gray) tint(70%));
+        padding-right: 2em;
+        background: none;
+        border: 0px solid transparent;
+        appearance: none
+      }
+
+      &:hover {
+        border-color: var(--input-border-hover-color)
+      }
+
+      &:focus {
+        box-shadow: inset 0 0 0 1px var(--input-focus-color);
+        border: 1px solid var(--input-focus-color);
+        outline: none
+      }
+    }
+  }
+
+
+  /* Controls - pure css styling for Radio buttons and Checkboxes */
+
+  --controls {
+    input[type='radio'],
+    input[type='checkbox'] {
+      position: absolute;
+      display: none
+    }
+
+    input[type='radio'][disabled],
+    input[type='checkbox'][disabled] {
+      cursor: not-allowed
+    }
+
+    input[type='radio'] + label,
+    input[type='checkbox'] + label {
+      position: relative;
+      display: block;
+      padding-left: calc(1.875 * var(--control-label-text-size));
+      cursor: pointer;
+      vertical-align: middle;
+      font-size: var(--control-label-text-size);
+      line-height: 1.3em;
+      margin-bottom: calc(0.5 * var(--control-label-text-size));
+
+      &:hover {
+        &:before {
+          border: 1px solid var(--input-control-active)
+        }
+      }
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: calc(1.25 * var(--control-label-text-size));
+        height: calc(1.25 * var(--control-label-text-size));
+        content: '';
+        transition: border .2s ease;
+        border: 1px solid var(--input-control-border);
+        background: var(--input-control)
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        transition: all .2s ease
+      }
+    }
+
+    input[type='radio'][disabled] + label,
+    input[type='checkbox'][disabled] + label {
+      cursor: not-allowed;
+      color: var(--input-control-disabled);
+
+      &:hover,
+      &:before,
+      &:after {
+        cursor: not-allowed
+      }
+      &:before {
+        border-color: var(--input-control-disabled)
+      }
+    }
+
+    input[type='radio']:checked + label,
+    input[type='checkbox']:checked + label {
+
+      &:after {
+        transform: scale(1)
+      }
+    }
+
+    input[type='radio'] + label {
+      &:before {
+        border-radius: 50%
+      }
+
+      &:after {
+        top: calc(0.375 * var(--control-label-text-size));
+        left: calc(0.375 * var(--control-label-text-size));
+        width: calc(0.5 * var(--control-label-text-size));
+        height: calc(0.5 * var(--control-label-text-size));
+        border-radius: 50%;
+        background: var(--input-control-active);
+        transform: scale(0)
+      }
+    }
+
+    input[type='radio']:checked + label {
+      &:before {
+        border: 1px solid var(--input-control-active)
+      }
+    }
+
+    input[type='radio']:checked[disabled] + label {
+      &:before {
+        border: 1px solid var(--input-control-disabled-checked)
+      }
+
+      &:after {
+        background: var(--input-control-disabled-checked)
+      }
+    }
+
+    input[type='checkbox'] + label {
+      &:before {
+        border-radius: var(--global-border-radius)
+      }
+
+      &:after {
+        top: calc(0.125 * var(--control-label-text-size));
+        left: calc(0.4375 * var(--control-label-text-size));
+        width: calc(0.375 * var(--control-label-text-size));
+        height: calc(0.75 * var(--control-label-text-size));
+        transform: scale(0) rotate(45deg);
+        border-width: calc(0.125 * var(--control-label-text-size));
+        border-style: solid;
+        border-color: var(--input-control-checkmark);
+        border-top: 0;
+        border-left: 0
+      }
+    }
+
+    input[type='checkbox']:checked + label {
+      &:before {
+        border: var(--input-control-active);
+        background: var(--input-control-active)
+      }
+
+      &:after {
+        transform: scale(1) rotate(45deg)
+      }
+    }
+
+    input[type='checkbox']:checked[disabled] + label {
+      &:before {
+        border: var(--input-control-disabled-checked);
+        background: var(--input-control-disabled-checked)
+      }
+    }
+  }
+
+
+  /* Additive @apply: Forms */
+
+  /* WARNING: Creates classes in your css and styles them - not to be used inside */
+  /* an element. */
+
+  /* Adds default form styling */
+
+  --forms {
+    input[type='email'],
+    input[type='number'],
+    input[type='password'],
+    input[type='search'],
+    input[type='tel'],
+    input[type='text'],
+    input[type='url'],
+    input[type='color'],
+    input[type='date'],
+    input[type='datetime'],
+    input[type='datetime-local'],
+    input[type='month'],
+    input[type='time'],
+    input[type='week'],
+    textarea {
+      @apply --input;
+      @apply --autofill
+    }
+
+    /*overwrites for color */
+    input[type='color'] {
+      padding: .2rem;
+      width: 2.5rem;
+      max-width: 2.5rem;
+      min-width: 2.5rem;
+      height: 2rem;
+    }
+
+    input[type='reset'],
+    input[type='button'],
+    input[type='submit'] {
+      @apply --button;
+      @apply --button-outline;
+    }
+
+    input[type='file'] {
+      @apply --file-upload;
+    }
+
+    select {
+      @apply --input
+    }
+
+    /* Radio buttons and Checkboxes */
+    @apply --controls;
+
+
+
+
+    label {
+      @apply --label;
+    }
+
+    fieldset {
+      @apply --fieldset;
+    }
+
+    .select-box {
+      @apply --select-box;
+    }
+  }
+}

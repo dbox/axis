@@ -1,0 +1,95 @@
+/* ------ */
+/* Button */
+/* ------ */
+
+:root {
+  /* base styling needed for --button */
+  --button-base {
+    cursor: pointer;
+    line-height: 1em;
+    text-decoration: none;
+    display: inline-block;
+    border: var(--button-outline-stroke) solid var(--button-color);
+    border-radius: var(--global-border-radius);
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    user-select: none;
+
+    &:hover, &:active {
+      border: var(--button-outline-stroke) solid color(var(--button-color) shade(20%));
+      background-color: color(var(--button-color) shade(20%));
+    }
+  }
+
+  /* the button */
+  --button {
+    @apply --button-base;
+    padding: calc(var(--button-med-size) * .6) calc(var(--button-med-size) * .8);
+    font-size: var(--button-med-size);
+  }
+
+  /* the button ,larger */
+  --button-large {
+    @apply --button-base;
+    padding: calc(var(--button-large-size) * .6) calc(var(--button-large-size));
+    font-size: var(--button-large-size);
+  }
+
+  /* the button, smaller */
+  --button-small {
+    @apply --button-base;
+    padding: calc(var(--button-small-size) * .6) calc(var(--button-small-size) * .8) calc(var(--button-small-size) * .5);
+    font-size: var(--button-small-size);
+  }
+
+  /* outline button */
+  --button-outline {
+    @apply --button-base;
+    background: transparent;
+    color: var(--base-gray);
+    border: var(--button-outline-stroke) solid var(--base-gray);
+
+    &:hover {
+      background: inherit;
+      border: var(--button-outline-stroke) solid var(--button-color);
+      color: var(--button-color);
+    }
+  }
+
+  /* disabled button */
+  --button-disabled {
+    @apply --button-base;
+    cursor: not-allowed;
+    background-color: color(var(--base-gray) tint(70%));
+    border: var(--button-outline-stroke) solid color(var(--base-gray) tint(70%));
+
+    &:hover {
+      background-color: color(var(--base-gray) tint(70%));
+      border: var(--button-outline-stroke) solid color(var(--base-gray) tint(70%));
+    }
+  }
+
+  /* additive */
+  --buttons {
+    button,
+    .btn {
+      @apply --button;
+
+      &.large {
+        @apply --button-large;
+      }
+
+      &.small {
+        @apply --button-small;
+      }
+
+      &.outline {
+        @apply --button-outline;
+      }
+
+      &.disabled {
+        @apply --button-disabled;
+      }
+    }
+  }
+}

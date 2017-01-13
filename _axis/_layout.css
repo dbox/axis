@@ -1,0 +1,20 @@
+/* ------ */
+/* Layout */
+/* ------ */
+
+:root {
+  /* hr - horizontal rule preset */
+  --hr {
+    border: 0;
+    border-bottom: var(--hr-size) solid var(--hr-color);
+    height: 0;
+    padding: 0;
+    margin: 1.5rem 0
+  }
+
+  --layout {
+    hr {
+      @apply --hr
+    }
+  }
+}

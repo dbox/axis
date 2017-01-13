@@ -1,0 +1,277 @@
+/* ---------- */
+/* Typography */
+/* ---------- */
+
+:root {
+
+  /* text margin preset */
+  --text-margin {
+    margin: .75rem 0;
+  }
+
+  /* paragraph preset */
+  --p {
+    @apply --text-margin;
+    line-height: var(--line-height);
+    font-size: var(--base-font-size);
+  }
+
+  /* "small" text preset */
+  --small {
+    font-size: 70%;
+    opacity: .7;
+    font-weight: var(--base-font-weight);
+  }
+
+  /* heading base - used across all headings below */
+  --heading-base {
+    display: var(--heading-display);
+    font-weight: var(--heading-font-weight)
+  }
+
+  /* heading sizes, used in headings below */
+  --h1-size: calc(2.4rem * var(--heading-size-multiplier));
+  --h2-size: calc(1.8rem * var(--heading-size-multiplier));
+  --h3-size: calc(1.5rem * var(--heading-size-multiplier));
+  --h4-size: calc(1.3rem * var(--heading-size-multiplier));
+  --h5-size: calc(1.0rem * var(--heading-size-multiplier));
+  --h6-size: calc(0.9rem * var(--heading-size-multiplier));
+
+  /* h1 preset */
+  --h1 {
+    @apply --heading-base;
+    margin: calc(var(--h1-size) * .75) 0;
+    font-size: var(--h1-size);
+    line-height: var(--heading-line-height);
+  }
+
+  /* h2 preset */
+  --h2 {
+    @apply --heading-base;
+    margin: calc(var(--h2-size) * .75) 0;
+    font-size: var(--h2-size);
+    line-height: var(--heading-line-height);
+  }
+
+  /* h3 preset */
+  --h3 {
+    @apply --heading-base;
+    margin: calc(var(--h3-size) * .75) 0;
+    font-size: var(--h3-size);
+    line-height: var(--heading-line-height);
+  }
+
+  /* h4 preset */
+  --h4 {
+    @apply --heading-base;
+    margin: calc(var(--h4-size) * .75) 0;
+    font-size: var(--h4-size);
+    line-height: var(--heading-line-height);
+  }
+
+  /* h5 preset */
+  --h5 {
+    @apply --heading-base;
+    margin: calc(var(--h5-size) * .75) 0;
+    font-size: var(--h5-size);
+    line-height: var(--heading-line-height);
+  }
+
+
+  /* h6 preset */
+  --h6 {
+    @apply --heading-base;
+    margin: calc(var(--h6-size) * .75) 0;
+    font-size: var(--h6-size);
+    line-height: var(--heading-line-height);
+    text-transform: uppercase;
+  }
+
+
+  /* blockquote preset */
+  --blockquote {
+    line-height: var(--heading-line-height);
+    border-left: .4rem solid var(--color-primary);
+    margin: 1em 0;
+    padding-left: 1.5em;
+
+    & > p {
+      font-weight: var(--base-font-weight);
+      font-size: 1.27rem;
+      line-height: 127%;
+      line-height: inherit;
+      margin-top: 0;
+    }
+
+    & > cite,
+    & > footer,
+    & > figcaption {
+      color: color(var(--base-gray) lightness(55%));
+
+      &:before {
+        content: '\2014';
+      }
+    }
+  }
+
+  /* Ellipsis - Truncate text to the width of its container.. */
+  --ellipsis {
+    white-space: nowrap;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+  }
+
+  /* Custom color for user-selected text */
+  --text-selection {
+    &::selection {
+      background: var(--selection-highlight);
+    }
+  }
+
+
+  /* Default styling for links */
+  --link {
+    color: var(--color-primary);
+    text-decoration: none;
+    @apply --transition;
+  }
+
+  /* Reset default link styling */
+  --reset-link {
+    border: none;
+    text-decoration: none;
+    color: initial;
+
+    &:hover {
+      border: none;
+      text-decoration: none;
+      color: initial;
+    }
+  }
+
+  /* ul preset */
+  --ul {
+    margin: 0.32rem 0.94rem;
+    padding-left: 1rem;
+
+    & li {
+      list-style-type: disc;
+      padding: 0.125rem;
+    }
+  }
+
+  /* ol preset */
+  --ol {
+    margin: 0.32rem 1.125rem;
+    padding-left: 1rem;
+
+    & li {
+      list-style-type: decimal;
+      padding: 0.125rem;
+    }
+  }
+
+  /* inline list */
+  --inline-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & li {
+      list-style-type: none;
+    }
+
+    & li:not(:last-child) {
+      margin-right: 1.5rem;
+    }
+  }
+
+  /* reset list */
+  --reset-list {
+    display: initial;
+    margin: 0;
+    padding: 0;
+
+    & li {
+      list-style-type: none;
+      padding: 0;
+      margin: 0
+    }
+  }
+
+
+  /* Additive */
+
+  --base {
+    html {
+      font-size: var(--base-font-size);
+    }
+
+    body {
+      font-family: var(--font-stack);
+      font-size: var(--base-font-size);
+      color: color(var(--font-color));
+      font-weight: var(--base-font-weight);
+    }
+  }
+
+  --headers {
+    h1 {
+      @apply --h1;
+    }
+
+    h2 {
+      @apply --h2;
+    }
+
+    h3 {
+      @apply --h3;
+    }
+
+    h4 {
+      @apply --h4;
+    }
+
+    h5 {
+      @apply --h5;
+    }
+
+    h6 {
+      @apply --h6;
+    }
+  }
+
+  --lists {
+    ul {
+      @apply ul;
+    }
+
+    li {
+      @apply li;
+    }
+  }
+
+  --typography {
+    @apply --base;
+    @apply --headers;
+    @apply --lists;
+    @apply --text-selection;
+
+    p {
+      @apply --p;
+    }
+
+    a {
+      @apply --link;
+    }
+
+    blockquote {
+      @apply --blockquote;
+    }
+  }
+}

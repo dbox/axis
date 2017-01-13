@@ -1,0 +1,44 @@
+/* ----------- */
+/* Code Blocks */
+/* ----------- */
+
+:root {
+  /* Inline code block preset */
+  --code {
+    background-color: color(var(--base-gray) lightness(96%));
+    border: 1px solid color(var(--base-gray) lightness(85%));
+    border-radius: var(--global-border-radius);
+    color: var(--color-accent);
+    font-family: var(--monospace);
+    font-size: .72rem;
+    line-height: .72rem;
+    padding: .08rem .3rem;
+    white-space: normal;
+  }
+
+  /* Preformatted text preset */
+  --pre {
+    background-color: color(var(--base-gray) lightness(96%));
+    border: 1px solid color(var(--base-gray) lightness(80%));
+    border-radius: var(--global-border-radius);
+    display: block;
+    font-family: var(--monospace);
+    font-size: .75rem;
+    line-height: 1.15rem;
+    margin: 0 0 1rem;
+    padding: .5rem .8rem;
+    white-space: pre-wrap;
+  }
+
+
+  /* Additive Apply: Code blocks */
+  --code-blocks {
+    code {
+      @apply --code;
+    }
+
+    pre {
+      @apply --pre;
+    }
+  }
+}
