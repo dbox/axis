@@ -22,8 +22,5 @@
   "bugs": {
     "url": "https://github.com/dbox/axis/issues"
   },
-  "homepage": "https://github.com/dbox/axis#readme",
-  "dependencies": {
-    "sanitize.css": "^4.1.0"
-  }
+  "homepage": "https://github.com/dbox/axis#readme"
 }
