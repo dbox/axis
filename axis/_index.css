@@ -1,5 +1,5 @@
 @import '_settings.css';
-@import '_sanitize.css';
+@import 'sanitize.css';
 @import '_interaction.css';
 @import '_typography.css';
 @import '_code.css';
@@ -18,6 +18,6 @@
     @apply --forms;
     @apply --buttons;
     @apply --layout;
-    @apply --tables;    
+    @apply --tables;
   }
 }
