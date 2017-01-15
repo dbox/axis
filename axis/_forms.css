@@ -373,7 +373,11 @@
     input[type='datetime-local'],
     input[type='month'],
     input[type='time'],
-    input[type='week'],
+    input[type='week'] {
+      @apply --input;
+      @apply --autofill;
+    }
+
     textarea {
       @apply --textarea;
     }
