@@ -1,5 +1,5 @@
 @import '_settings.css';
-@import '_sanitize.css';
+@import '_reset.css';
 @import '_interaction.css';
 @import '_typography.css';
 @import '_code.css';

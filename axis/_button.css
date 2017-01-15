@@ -5,6 +5,7 @@
 :root {
   /* base styling needed for --button */
   --button-base {
+    @apply --transition;
     cursor: pointer;
     line-height: 1em;
     text-decoration: none;
@@ -14,6 +15,7 @@
     background-color: var(--button-color);
     color: var(--button-text-color);
     user-select: none;
+
 
     &:hover, &:active {
       border: var(--button-outline-stroke) solid color(var(--button-color) shade(20%));
