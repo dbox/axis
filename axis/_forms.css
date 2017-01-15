@@ -21,6 +21,9 @@
     max-width: var(--input-max-width);
     min-width: var(--input-min-width);
     color: color(var(--base-gray) shade(50%));
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
 
     &:hover {
       border-color: var(--input-border-hover-color)
@@ -41,6 +44,7 @@
       box-shadow: 0 0 .6rem color(var(--color-warning) a(50%))
     }
   }
+
 
   --autofill {
     &:-webkit-autofill {
@@ -64,6 +68,15 @@
     }
   }
 
+
+  --textarea {
+    @apply --input;
+    @apply --autofill;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
   --label {
     display: var(--label-display);
     text-align: var(--label-align);
@@ -71,6 +84,8 @@
   }
 
   --file-upload {
+    box-sizing: border-box;
+    font-size: var(--base-font-size);
     cursor: pointer;
     line-height: 1em;
     text-decoration: none;
@@ -84,6 +99,7 @@
     color: var(--button-text-color);
 
     &:after {
+      box-sizing: inherit;
       text-align: center;
       position: absolute;
       display: block;
@@ -113,6 +129,7 @@
 
   /*todo: focus highlight*/
   --select-box {
+    box-sizing: border-box;
     position: relative;
     display: inline-block;
     width: var(--input-width);
@@ -165,7 +182,12 @@
         padding-right: 2em;
         background: none;
         border: 0px solid transparent;
-        appearance: none
+        appearance: none;
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    	  text-transform: none;
+        margin: 0;
       }
 
       &:hover {
@@ -186,17 +208,19 @@
   --controls {
     input[type='radio'],
     input[type='checkbox'] {
+      box-sizing: border-box;
       position: absolute;
-      display: none
+      display: none;
     }
 
     input[type='radio'][disabled],
     input[type='checkbox'][disabled] {
-      cursor: not-allowed
+      cursor: not-allowed;
     }
 
     input[type='radio'] + label,
     input[type='checkbox'] + label {
+      box-sizing: border-box;
       position: relative;
       display: block;
       padding-left: calc(1.875 * var(--control-label-text-size));
@@ -213,6 +237,7 @@
       }
 
       &:before {
+        box-sizing: border-box;
         position: absolute;
         top: 0;
         left: 0;
@@ -226,6 +251,7 @@
       }
 
       &:after {
+        box-sizing: border-box;
         position: absolute;
         content: '';
         transition: all .2s ease
@@ -251,13 +277,13 @@
     input[type='checkbox']:checked + label {
 
       &:after {
-        transform: scale(1)
+        transform: scale(1);
       }
     }
 
     input[type='radio'] + label {
       &:before {
-        border-radius: 50%
+        border-radius: 50%;
       }
 
       &:after {
@@ -267,29 +293,29 @@
         height: calc(0.5 * var(--control-label-text-size));
         border-radius: 50%;
         background: var(--input-control-active);
-        transform: scale(0)
+        transform: scale(0);
       }
     }
 
     input[type='radio']:checked + label {
       &:before {
-        border: 1px solid var(--input-control-active)
+        border: 1px solid var(--input-control-active);
       }
     }
 
     input[type='radio']:checked[disabled] + label {
       &:before {
-        border: 1px solid var(--input-control-disabled-checked)
+        border: 1px solid var(--input-control-disabled-checked);
       }
 
       &:after {
-        background: var(--input-control-disabled-checked)
+        background: var(--input-control-disabled-checked);
       }
     }
 
     input[type='checkbox'] + label {
       &:before {
-        border-radius: var(--global-border-radius)
+        border-radius: var(--global-border-radius);
       }
 
       &:after {
@@ -302,14 +328,14 @@
         border-style: solid;
         border-color: var(--input-control-checkmark);
         border-top: 0;
-        border-left: 0
+        border-left: 0;
       }
     }
 
     input[type='checkbox']:checked + label {
       &:before {
         border: var(--input-control-active);
-        background: var(--input-control-active)
+        background: var(--input-control-active);
       }
 
       &:after {
@@ -320,7 +346,7 @@
     input[type='checkbox']:checked[disabled] + label {
       &:before {
         border: var(--input-control-disabled-checked);
-        background: var(--input-control-disabled-checked)
+        background: var(--input-control-disabled-checked);
       }
     }
   }
@@ -349,8 +375,7 @@
     input[type='time'],
     input[type='week'],
     textarea {
-      @apply --input;
-      @apply --autofill
+      @apply --textarea;
     }
 
     /*overwrites for color */
@@ -359,14 +384,17 @@
       width: 2.5rem;
       max-width: 2.5rem;
       min-width: 2.5rem;
-      height: 2rem;
+      height: 1.5em;
     }
 
-    input[type='reset'],
+    input[type='reset'] {
+      @apply --button;
+      @apply --button-outline;
+    }
+
     input[type='button'],
     input[type='submit'] {
       @apply --button;
-      @apply --button-outline;
     }
 
     input[type='file'] {

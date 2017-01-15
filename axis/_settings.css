@@ -48,11 +48,11 @@
   --input-min-width: auto;
   --input-border-color: color(var(--base-gray) tint(70%));
   --input-border-hover-color: color(var(--input-border-color) shade(20%));
-  --input-bg-color: #fff;
+  --input-bg-color: transparent;
   --input-height: auto;
   --input-padding: .4em .65em;
   --input-stroke: 1px;
-  --input-focus-inset: 1px;  
+  --input-focus-inset: 1px;
   --input-focus-color: var(--color-primary);
   --input-autofill-bg-color: var(--base-gray);
   --input-autofill-color: white;
