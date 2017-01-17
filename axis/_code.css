@@ -22,8 +22,8 @@
     border-radius: var(--global-border-radius);
     display: block;
     font-family: var(--monospace);
-    font-size: .75rem;
-    line-height: 1.15rem;
+    font-size: inherit;
+    line-height: inherit;
     margin: 0 0 1rem;
     padding: .5rem .8rem;
     white-space: pre-wrap;
@@ -33,14 +33,6 @@
     background-color: color(var(--base-gray) lightness(20%));
     color: color(var(--base-gray) lightness(75%));
     border: 1px solid color(var(--base-gray) lightness(14%));
-    border-radius: var(--global-border-radius);
-    display: block;
-    font-family: var(--monospace);
-    font-size: .75rem;
-    line-height: 1.15rem;
-    margin: 0 0 1rem;
-    padding: .5rem .8rem;
-    white-space: pre-wrap;    
   }
 
   /*todo: add --pre-dark*/
