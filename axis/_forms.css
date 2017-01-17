@@ -16,12 +16,11 @@
     outline: none;
     padding: var(--input-padding);
     background: var(--input-bg-color);
-    font-family: var(--font-stack);
+    font-family: inherit;
     width: var(--input-width);
     max-width: var(--input-max-width);
     min-width: var(--input-min-width);
-    color: color(var(--base-gray) shade(50%));
-    color: inherit;
+    color: var(--input-text-color);
     font-size: inherit;
     line-height: inherit;
 
@@ -49,22 +48,22 @@
   --autofill {
     &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
-      -webkit-text-fill-color: var(--input-autofill-color)
+      -webkit-text-fill-color: var(--input-autofill-text-color)
     }
 
     &:-moz-autofill {
       -moz-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
-      -moz-text-fill-color: var(--input-autofill-color)
+      -moz-text-fill-color: var(--input-autofill-text-color)
     }
 
     &:-o-autofill {
       -o-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
-      -o-text-fill-color: var(--input-autofill-color)
+      -o-text-fill-color: var(--input-autofill-text-color)
     }
 
     &:-khtml-autofill {
       -khtml-box-shadow: 0 0 0px 1000px var(--input-autofill-bg-color) inset;
-      -khtml-text-fill-color: var(--input-autofill-color)
+      -khtml-text-fill-color: var(--input-autofill-text-color)
     }
   }
 
@@ -136,6 +135,7 @@
     min-width: var(--input-min-width);
     max-width: var(--input-max-width);
     border-radius: var(--global-border-radius);
+    background-color: var(--input-select-bg-color);
     /*max-width: var(--input-max-width) */
 
     & select {

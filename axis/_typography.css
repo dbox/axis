@@ -206,6 +206,8 @@
     html {
       font-size: var(--base-font-size);
       line-height: var(--line-height);
+      -ms-text-size-adjust: 100%;
+    	-webkit-text-size-adjust: 100%; 
     }
 
     body {
