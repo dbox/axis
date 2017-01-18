@@ -1,95 +1,65 @@
 /* ------ */
-/* Layout */
+/* Tables */
 /* ------ */
 
 :root {
-  /* Table todo:  clean up grays */
 
-    --table-basic {
-      border-collapse: collapse;
-      border-spacing: 0;
-      max-width: 100%;
-      width: 100%;
-      border-radius: 0;
-      box-shadow: inset 0 0 0 1px #c5cbd0;
-      margin: 1.5rem 0 3em;
-      position: relative;
+  /* Basic Table */
+  --table-basic {
+    border-collapse: collapse;
+    border-spacing: 0;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+    margin: 1.5rem 0 3em; /* ? */
+    position: relative;
+    text-align: left;
 
-      & th, & td {
-        border-top: 1px solid #c5cbd0;
-        line-height: 18px;
-        padding: 14px;
-        text-align: left;
-        vertical-align: top;
-      }
+    & th, & td {
+      border: var(--default-border);
+      padding: .5em 1em;
+    }
+  }
 
-      & th {
-        font-weight: bold;
-      }
+  /* Minimal Table */
+  --table-minimal {
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 1.5rem 0 3em;  /* ? */
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
 
-      & thead th {
-        vertical-align: bottom;
-        font-weight: 600;
-      }
-
-      & tbody + tbody {
-        border-top: 2px solid #c5cbd0;
-      }
-
-      & th + th {
-        border-left: 1px solid #c5cbd0;
-      }
-
-      & td + td,
-      & th + td,
-      & td + th {
-        border-left: 1px solid #c5cbd0
-      }
-
-
-
-      & tbody td {
-        vertical-align: middle
-      }
+    & td, & th {
+      line-height: var(--line-height);
+      padding: .5em 1em;
     }
 
-    --table-minimal {
-      text-align: left;
-      border-collapse: collapse;
-      border-spacing: 0;
-      max-width: 100%;
-      width: 100%;
-      border-radius: 0;
+    & td {
+      border-top: var(--default-border);
+    }
+  }
 
-      & td, & th {
-        line-height: var(--line-height);
-        padding: .5em 1em;
-      }
-      & td {
-        border-top: 1px solid #c5cbd0;
-      }
-      & th {
-        font-weight: bold;
+  /* Table utility: Zebra Stripes */
+  --zebra-stripes {
+    & tr:nth-child(odd) td {
+      background: rgba(0,0,0,.03);
+    }
+  }
+
+  /* Table utility: HOver rows */
+  --hover-rows {
+    & tr {
+      @apply --transition;
+
+      &:hover {
+        background: rgba(0,0,0,.08);
       }
     }
+  }
 
-    --zebra-stripes {
-        & tr:nth-child(odd) td {
-          background: rgba(0,0,0,.03);
-        }
-      }
-
-      --hover-rows {
-        & tr {
-          @apply --transition;
-
-          &:hover {
-            background: rgba(0,0,0,.08);
-          }
-        }
-      }
-
-  /*Addtive mixin: tables*/
+  /* Addtive mixin: Tables */
   --tables {
     table {
       @apply --table-basic
