@@ -3,6 +3,32 @@
 /* --------- */
 
 :root {
+
+  /* Make wide elements scroll horizontally at a set breakpoint, with a nice
+  visual cue (shadow) - mostly useful for responsive tables. Note: must be set
+  on containing element. */
+  --responsive-overflow {
+    position: relative;
+
+    @media (--axis-breakpoint) {
+      & > * {
+        overflow-x: auto;
+        display: block;
+      }
+
+      &:after {
+        content: '';
+        width: 1rem;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,.15));
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+
   /* Debug - needs comment */
 
   --debug {
