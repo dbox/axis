@@ -8,10 +8,11 @@
 @import '_button.css';
 @import '_forms.css';
 @import '_tables.css';
+@import '_sanitize.css';
 
 :root {
   --axis-framework {
-    @apply --sanitize;
+    @apply --border-box-html;
     @apply --typography;
     @apply --code-blocks;
     @apply --forms;

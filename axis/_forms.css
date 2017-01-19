@@ -82,7 +82,7 @@
     min-width: var(--label-min-width)
   }
 
-  --file-upload {
+  --file-input {
     box-sizing: border-box;
     font-size: var(--base-font-size);
     cursor: pointer;
@@ -109,8 +109,6 @@
       background-color: var(--button-color);
       content: 'Choose a file ...';
       padding: calc(var(--button-med-size) * .6) calc(var(--button-med-size) * .8);
-
-
     }
     &:hover:after, &:active:after {
       background-color: color(var(--button-color) shade(20%));
@@ -402,7 +400,7 @@
     }
 
     input[type='file'] {
-      @apply --file-upload;
+      @apply --file-input;
     }
 
     select {
