@@ -10,8 +10,8 @@
     border-radius: var(--global-border-radius);
     color: var(--color-accent);
     font-family: var(--monospace);
-    font-size: .72rem;
-    padding: .08rem .3rem;
+    font-size: .8rem;
+    padding: .08rem .2rem;
     white-space: normal;
   }
 
