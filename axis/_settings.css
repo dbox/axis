@@ -6,9 +6,6 @@
   --default-easing: cubic-bezier(0.250,  0.460, 0.450, 0.940);
   --default-transition-duration: .3s;
 
-  /*default breakpoint for responsive-overflow. For a more robust breakpoint library see xxx.*/
-  @custom-media --axis-breakpoint (width < 768px);
-
   /* Colors */
   --base-gray: #767d84;
   --color-primary: #0074D9;
@@ -91,3 +88,6 @@
   --table-radius: var(--global-border-radius);
   --table-border: var(--default-border);
 }
+
+/*default breakpoint for responsive-overflow. For a more robust breakpoint library see xxx.*/
+@custom-media --axis-breakpoint (width < 768px);

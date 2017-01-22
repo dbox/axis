@@ -24,7 +24,7 @@
     font-family: var(--monospace);
     font-size: .8rem;
     line-height: inherit;
-    margin: 0 0 1rem;
+    margin: 0 0 var(--default-margin);
     padding: .5rem .8rem;
     white-space: pre-wrap;
   }
