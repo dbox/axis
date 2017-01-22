@@ -85,4 +85,8 @@
   --input-control-disabled: color(var(--base-gray) tint(70%));
   --input-control-disabled-checked: color(var(--input-control-active) tint(40%));
   --input-control-checkmark: #fff;
+
+  /*Tables*/
+  --table-radius: var(--global-border-radius);
+  --table-border: var(--default-border);
 }

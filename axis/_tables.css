@@ -6,18 +6,56 @@
 
   /* Basic Table */
   --table-basic {
-    border-collapse: collapse;
+    border-collapse: separate;
     border-spacing: 0;
     max-width: 100%;
     width: 100%;
-    border-radius: 0;
-    margin: 1.5rem 0 3em; /* ? */
+    border-radius: var(--table-radius);
+    margin: 1.5rem 0 3em; // todo: global margins?
     position: relative;
     text-align: left;
+    border: var(--table-border);
 
     & th, & td {
-      border: var(--default-border);
       padding: .5em 1em;
+      border-top: var(--table-border);
+    }
+
+    & tr th {
+      border-bottom: var(--table-border);
+    }
+
+    & tr:first-child th,
+    & tr:first-child td {
+      border-top: 0;
+    }
+
+    & tr:first-child td:first-child,
+    & tr:first-child th:first-child{
+      border-radius: var(--table-radius) 0 0 0;
+    }
+
+    & tr:first-child td:last-child,
+    & tr:first-child th:last-child{
+      border-radius: 0 var(--table-radius) 0 0;
+    }
+
+    & tr:last-child td:last-child {
+      border-radius: 0 0 var(--table-radius) 0;
+    }
+
+    & tr:last-child td:first-child {
+      border-radius: 0 0 0 var(--table-radius);
+    }
+
+    & thead + tbody tr:first-child td:first-child,
+    & thead + tbody tr:first-child td:last-child
+    {
+      border-radius: 0;
+    }
+
+    & th + th, & td + td, & th + td, & td + th {
+      border-left: var(--table-border);
     }
   }
 
@@ -41,14 +79,14 @@
     }
   }
 
-  /* Table utility: Zebra Stripes */
+  /* Table utility: Zebra stripes */
   --zebra-stripes {
     & tr:nth-child(odd) td {
       background: rgba(0,0,0,.03);
     }
   }
 
-  /* Table utility: HOver rows */
+  /* Table utility: Hover rows */
   --hover-rows {
     & tr {
       @apply --transition;
