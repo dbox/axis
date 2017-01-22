@@ -2,6 +2,7 @@
   /* Defaults */
   --global-border-radius: 2px;
   --default-border: 1px solid color(var(--base-gray) tint(70%));
+  --default-margin: 1.5rem;
   --default-easing: cubic-bezier(0.250,  0.460, 0.450, 0.940);
   --default-transition-duration: .3s;
 
