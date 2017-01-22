@@ -82,6 +82,7 @@
     min-width: var(--label-min-width)
   }
 
+  /*todo: browser test this*/
   --file-input {
     box-sizing: border-box;
     font-size: var(--base-font-size);
