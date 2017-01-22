@@ -11,7 +11,7 @@
     max-width: 100%;
     width: 100%;
     border-radius: var(--table-radius);
-    margin: 1.5rem 0 3em; // todo: global margins?
+    margin: 1.5rem 0 3em; /* todo: global margins? */
     position: relative;
     text-align: left;
     border: var(--table-border);
@@ -36,7 +36,7 @@
     }
 
     & tr:first-child td:last-child,
-    & tr:first-child th:last-child{
+    & tr:first-child th:last-child {
       border-radius: 0 var(--table-radius) 0 0;
     }
 
