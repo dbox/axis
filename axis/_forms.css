@@ -4,7 +4,9 @@
 
 :root {
 
-  /* Todo: Select (Q+A) */
+  /* Todo: Select (Q+A)
+    Think about main input selector. Maybe we don't need all these variables.
+   */
 
   --input {
     @apply --transition;
@@ -121,11 +123,11 @@
     border-radius: var(--global-border-radius)
   }
 
-  /* select box */
-  /* Must be applied to element wrapping <select> tag. */
-  /* TODO: ie 10 + 11 support ? */
+  /* Mixin: select box
+  Must be applied to element wrapping <select> tag.
+  todo: ie 10 + 11 support
+  todo: focus highlight ? */
 
-  /*todo: focus highlight*/
   --select-box {
     box-sizing: border-box;
     position: relative;
