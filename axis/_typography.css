@@ -207,7 +207,7 @@
       font-size: var(--base-font-size);
       line-height: var(--line-height);
       -ms-text-size-adjust: 100%;
-    	-webkit-text-size-adjust: 100%; 
+    	-webkit-text-size-adjust: 100%;
     }
 
     body {
@@ -271,5 +271,23 @@
     blockquote {
       @apply --blockquote;
     }
+
+    /* todo: test this */
+    sub,
+    sup {
+    	font-size: 75%;
+    	line-height: 0;
+    	position: relative;
+    	vertical-align: baseline;
+    }
+
+    sub {
+    	bottom: -.25em;
+    }
+
+    sup {
+    	top: -.5em;
+    }
+
   }
 }
