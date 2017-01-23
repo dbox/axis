@@ -353,28 +353,15 @@
   }
 
 
-  /* Additive @apply: Forms */
+  /* Additive @apply: Forms
 
-  /* WARNING: Creates classes in your css and styles them - not to be used inside */
-  /* an element. */
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
 
-  /* Adds default form styling */
+  Adds default form styling */
 
   --forms {
-    input[type='email'],
-    input[type='number'],
-    input[type='password'],
-    input[type='search'],
-    input[type='tel'],
-    input[type='text'],
-    input[type='url'],
-    input[type='color'],
-    input[type='date'],
-    input[type='datetime'],
-    input[type='datetime-local'],
-    input[type='month'],
-    input[type='time'],
-    input[type='week'] {
+    :--html5-inputs {
       @apply --input;
       @apply --autofill;
     }
@@ -404,10 +391,6 @@
 
     input[type='file'] {
       @apply --file-input;
-    }
-
-    select {
-      @apply --input
     }
 
     /* Radio buttons and Checkboxes */

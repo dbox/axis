@@ -244,7 +244,7 @@
     body {
       font-family: var(--font-stack);
       font-size: var(--base-font-size);
-      color: color(var(--font-color));
+      color: var(--font-color);
       font-weight: var(--base-font-weight);
     }
   }
