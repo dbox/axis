@@ -87,6 +87,8 @@
   /*Tables*/
   --table-radius: var(--global-border-radius);
   --table-border: var(--default-border);
+  --zebra-stipe-color: rgba(0,0,0,.03);
+  --hover-row-color: rgba(0,0,0,.08);
 
   /*default breakpoint for responsive-overflow. For a more robust breakpoint library see xxx.*/
   @custom-media --axis-breakpoint (width < 768px);

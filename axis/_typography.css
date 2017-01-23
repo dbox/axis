@@ -6,7 +6,7 @@
 
   /* paragraph preset */
   --p {
-    margin: var(--paragraph-margin) 0¡¡;
+    margin: var(--paragraph-margin) 0;
     line-height: var(--paragraph-line-height);
     font-size: var(--base-font-size);
   }
@@ -18,13 +18,13 @@
     font-weight: var(--base-font-weight);
   }
 
-  /* heading base - used across all headings below */
+  /* Heading base - used across all headings below */
   --heading-base {
     display: var(--heading-display);
     font-weight: var(--heading-font-weight)
   }
 
-  /* heading sizes, used in headings below */
+  /* Heading sizes, used in headings below */
   --h1-size: calc(2.4rem * var(--heading-size-multiplier));
   --h2-size: calc(1.8rem * var(--heading-size-multiplier));
   --h3-size: calc(1.5rem * var(--heading-size-multiplier));
@@ -83,7 +83,11 @@
   }
 
 
-  /* blockquote preset */
+  /* Mixin: Blockquote
+
+  Nice styles for a blockquote, and even puts a nice hyphen in before your
+  citation. Use with a <p> and <cite>, <footer>, or <figcaption> inside for
+  best results. Pass a color or 'none' to set the left border. */
   --blockquote {
     line-height: var(--heading-line-height);
     border-left: .4rem solid var(--color-primary);
@@ -109,7 +113,9 @@
     }
   }
 
-  /* Ellipsis - Truncate text to the width of its container.. */
+  /* Mixin: Ellipsis
+
+  Truncate text to the width of its container */
   --ellipsis {
     white-space: nowrap;
     display: inline-block;
@@ -119,13 +125,15 @@
     word-wrap: normal;
   }
 
-  /* Custom color for user-selected text */
+  /* Mixin: Text Selection
+
+  This guy sets the text select color intelligently based on the
+  --section-highlight variable found in the settings file. */
   --text-selection {
     &::selection {
       background: var(--selection-highlight);
     }
   }
-
 
   /* Default styling for links */
   --link {
@@ -134,7 +142,9 @@
     @apply --transition;
   }
 
-  /* Reset default link styling */
+  /* Mixin: Reset link
+
+  Reset the --link mixin, above */
   --reset-link {
     border: none;
     text-decoration: none;
@@ -147,7 +157,11 @@
     }
   }
 
-  /* ul preset */
+  /* Mixin: Ul
+
+  A nice default for unordered list styles. More or less the same as browser defaults,
+  scales nicely. You can pass it any style that list-style-type would normally
+  take. Defaults to disc. Use this on a ul element por favor. */
   --ul {
     margin: 0.32rem 0.94rem;
     padding-left: 1rem;
@@ -158,7 +172,11 @@
     }
   }
 
-  /* ol preset */
+  /* Mixin: Ol
+
+  A nice default for ordered list styles. More or less the same as browser
+  defaults, scales nicely. You can pass it any style that list-style-type
+  would normally take. Defaults to disc. Use this on a ul element por favor. */
   --ol {
     margin: 0.32rem 1.125rem;
     padding-left: 1rem;
@@ -169,7 +187,10 @@
     }
   }
 
-  /* inline list */
+  /* Mixin: Inline list
+
+  For when you need your list to be horizontal. Pass it the spacing you want
+  between list elements, whatever units you'd like. Defaults to 20px. */
   --inline-list {
     margin: 0;
     padding: 0;
@@ -186,7 +207,11 @@
     }
   }
 
-  /* reset list */
+  /* Mixin: Reset List
+
+  If you're tired of all the list shenanigans and want to get rid of them for
+  this special list you're working on, this is your guy. Resets the margins,
+  padding, and style. */
   --reset-list {
     display: initial;
     margin: 0;
@@ -200,8 +225,14 @@
   }
 
 
-  /* Additive */
+  /* Additive Mixin: Base
 
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  This is an essential mixin. You want this on your page. Sets your font stack,
+  size, and colors based on the settings file and makes sure that your text is
+  a great looking as possible. */
   --base {
     html {
       font-size: var(--base-font-size);
@@ -218,6 +249,12 @@
     }
   }
 
+  /* Additive Mixin: Headers
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' wonderful scaling header styles to your <hx> tags.. */
   --headers {
     h1 {
       @apply --h1;
@@ -244,6 +281,12 @@
     }
   }
 
+  /* Additive Mixin: Lists
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' styles to ul and ols. */
   --lists {
     ul {
       @apply ul;
@@ -254,6 +297,13 @@
     }
   }
 
+  /* Additive Mixin: Typography
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' styles to bold and italic elements, headers, paragrapgs, small
+  text, links, lists, and blockquotes. Got all your basic elements covered. */
   --typography {
     @apply --base;
     @apply --headers;

@@ -4,7 +4,9 @@
 
 :root {
 
-  /* Make wide elements scroll horizontally at a set breakpoint, with a nice
+  /*  Mixin: Responsive overflow
+
+  Make wide elements scroll horizontally at a set breakpoint, with a nice
   visual cue (shadow) - mostly useful for responsive tables. Note: must be set
   on containing element. */
   --responsive-overflow {
@@ -29,9 +31,15 @@
     }
   }
 
+  /* Mixin: Debug
 
-  /* Debug - needs comment */
+  Debugging tool - adds a border to the current element, its children,
+  grandchildren, etc so you can see what's up – great for precise layout
+  tweaks.  It will also add flags if you made mistakes like put in inline
+  styles, forgot an alt on an image, left the alt blank, etc. Not to be used
+  in production, obviously.
 
+  learn more: https://codepen.io/dbox/pen/GJZzYo?editors=1100 */
   --debug {
     border: 1px solid MediumPurple;
 

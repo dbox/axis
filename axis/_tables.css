@@ -3,7 +3,9 @@
 /* ------ */
 
 :root {
-  /* Basic Table */
+  /* Mixin: Basic Table
+
+  Creates a nice base style for your tables. */
   --table-basic {
     border-collapse: separate;
     border-spacing: 0;
@@ -57,12 +59,14 @@
     }
   }
 
-  /* Minimal Table */
+  /* Mixin: Minimal Table
+
+  Minimal styling for your table. */
   --table-minimal {
     text-align: left;
     border-collapse: collapse;
     border-spacing: 0;
-    margin: 1.5rem 0 3em;  /* ? */
+    margin-bottom: var(--default-margin);
     max-width: 100%;
     width: 100%;
     border-radius: 0;
@@ -77,20 +81,26 @@
     }
   }
 
-  /* Table utility: Zebra stripes */
+  /* Table utility: Zebra stripes
+
+  Slightly darkens every other row of youur table.
+  */
   --zebra-stripes {
     & tr:nth-child(odd) td {
-      background: rgba(0,0,0,.03);
+      background: var(--zebra-stipe-color);
     }
   }
 
-  /* Table utility: Hover rows */
+  /* Table utility: Hover rows
+
+  Darkens the row you are hovered on for increased readability.
+  */
   --hover-rows {
     & tr {
       @apply --transition;
 
       &:hover {
-        background: rgba(0,0,0,.08);
+        background: var(--hover-row-color);
       }
     }
   }

@@ -3,7 +3,8 @@
 /* ------ */
 
 :root {
-  /* hr - horizontal rule preset */
+  /* Mixin: Hr
+  Better horizontal rule presets */
   --hr {
     border: 0;
     border-bottom: var(--hr-size) solid var(--hr-color);

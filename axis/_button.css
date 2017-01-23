@@ -26,7 +26,7 @@
   }
 
   /* Button modifiers */
-  
+
   /* the button ,larger */
   --button-large {
     padding: calc(var(--button-large-size) * .6) calc(var(--button-large-size));
