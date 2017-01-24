@@ -6,8 +6,7 @@
 
   /* Mixin: Button
 
-  Creates a very basic looking button style, and a good starting point for
-  further styling. */
+  Creates a basic button. */
   --button {
     padding: calc(var(--button-med-size) * .6) calc(var(--button-med-size) * .8);
     font-size: var(--button-med-size);
@@ -16,19 +15,19 @@
     line-height: 1em;
     text-decoration: none;
     display: inline-block;
-    border: var(--button-outline-stroke) solid var(--button-color);
-    border-radius: var(--global-border-radius);
+    border: var(--outline-button-stroke) solid var(--button-bg-color);
+    border-radius: var(--button-radius);
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
     user-select: none;
 
     &:hover, &:active {
-      border: var(--button-outline-stroke) solid color(var(--button-color) shade(20%));
-      background-color: color(var(--button-color) shade(20%));
+      border: var(--outline-button-stroke) solid color(var(--button-bg-color) shade(20%));
+      background-color: color(var(--button-bg-color) shade(20%));
     }
   }
 
-  /* Button modifiers */
+  /* --- Button modifiers --- */
 
   /* Mixin: Large button
 
@@ -65,11 +64,11 @@
   --button-disabled {
     cursor: not-allowed;
     background-color: color(var(--base-gray) tint(70%));
-    border: var(--button-outline-stroke) solid color(var(--base-gray) tint(70%));
+    border: var(--outline-button-stroke) solid color(var(--base-gray) tint(70%));
 
     &:hover {
       background-color: color(var(--base-gray) tint(70%));
-      border: var(--button-outline-stroke) solid color(var(--base-gray) tint(70%));
+      border: var(--outline-button-stroke) solid color(var(--base-gray) tint(70%));
     }
   }
 
