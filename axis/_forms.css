@@ -413,10 +413,6 @@
     input[type='button'],
     input[type='submit'] {
       @apply --button;
-
-      &:not(:last-child){
-        margin-right: 10px;
-      }
     }
 
     input[type='reset'] {
