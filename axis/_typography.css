@@ -85,12 +85,12 @@
 
   /* Mixin: Blockquote
 
-  Nice styles for a blockquote, and even puts a nice hyphen in before your
+  Nice styles for a blockquote, and even puts a hyphen in before your
   citation. Use with a <p> and <cite>, <footer>, or <figcaption> inside for
-  best results. Pass a color or 'none' to set the left border. */
+  best results. */
   --blockquote {
     line-height: var(--heading-line-height);
-    border-left: .4rem solid var(--color-primary);
+    border-left: .4rem solid var(--blockquote-boder-color);
     margin: 1em 0;
     padding-left: 1.5em;
 
@@ -115,7 +115,7 @@
 
   /* Mixin: Ellipsis
 
-  Truncate text to the width of its container */
+  Truncate text to the width of its container. */
   --ellipsis {
     white-space: nowrap;
     display: inline-block;
@@ -160,8 +160,7 @@
   /* Mixin: Ul
 
   A nice default for unordered list styles. More or less the same as browser defaults,
-  scales nicely. You can pass it any style that list-style-type would normally
-  take. Defaults to disc. Use this on a ul element por favor. */
+  scales nicely. */
   --ul {
     margin: 0.32rem 0.94rem;
     padding-left: 1rem;
@@ -175,8 +174,7 @@
   /* Mixin: Ol
 
   A nice default for ordered list styles. More or less the same as browser
-  defaults, scales nicely. You can pass it any style that list-style-type
-  would normally take. Defaults to disc. Use this on a ul element por favor. */
+  defaults, scales nicely.  Use this on a ol element por favor. */
   --ol {
     margin: 0.32rem 1.125rem;
     padding-left: 1rem;
@@ -189,8 +187,7 @@
 
   /* Mixin: Inline list
 
-  For when you need your list to be horizontal. Pass it the spacing you want
-  between list elements, whatever units you'd like. Defaults to 20px. */
+  For when you need your list to be horizontal. For navs and whatnot. */
   --inline-list {
     margin: 0;
     padding: 0;
@@ -256,29 +253,12 @@
 
   Adds Axis' wonderful scaling header styles to your <hx> tags.. */
   --headers {
-    h1 {
-      @apply --h1;
-    }
-
-    h2 {
-      @apply --h2;
-    }
-
-    h3 {
-      @apply --h3;
-    }
-
-    h4 {
-      @apply --h4;
-    }
-
-    h5 {
-      @apply --h5;
-    }
-
-    h6 {
-      @apply --h6;
-    }
+    h1 { @apply --h1; }
+    h2 { @apply --h2; }
+    h3 { @apply --h3; }
+    h4 { @apply --h4; }
+    h5 { @apply --h5; }
+    h6 { @apply --h6; }
   }
 
   /* Additive Mixin: Lists
@@ -288,13 +268,8 @@
 
   Adds Axis' styles to ul and ols. */
   --lists {
-    ul {
-      @apply ul;
-    }
-
-    li {
-      @apply li;
-    }
+    ul { @apply ul; }
+    li { @apply li; }
   }
 
   /* Additive Mixin: Typography
@@ -302,7 +277,7 @@
   WARNING: Creates classes in your css and styles them - not to be used inside
   an element.
 
-  Adds Axis' styles to bold and italic elements, headers, paragrapgs, small
+  Adds Axis' styles to bold and italic elements, headers, paragraphs, small
   text, links, lists, and blockquotes. Got all your basic elements covered. */
   --typography {
     @apply --base;
@@ -322,7 +297,7 @@
       @apply --blockquote;
     }
 
-    /* todo: test this */
+    /* Todo: Test this */
     sub,
     sup {
     	font-size: 75%;
@@ -332,12 +307,11 @@
     }
 
     sub {
-    	bottom: -.25em;
+      bottom: -.25em;
     }
 
     sup {
-    	top: -.5em;
+      top: -.5em;
     }
-
   }
 }

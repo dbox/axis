@@ -3,7 +3,6 @@
 /* --------- */
 
 :root {
-
   /*  Mixin: Responsive overflow
 
   Make wide elements scroll horizontally at a set breakpoint, with a nice
@@ -39,37 +38,17 @@
   styles, forgot an alt on an image, left the alt blank, etc. Not to be used
   in production, obviously.
 
-  learn more: https://codepen.io/dbox/pen/GJZzYo?editors=1100 */
+  learn more here: https://codepen.io/dbox/pen/GJZzYo?editors=1100 */
   --debug {
     border: 1px solid MediumPurple;
 
-    & > * {
-      border: 1px solid DarkKhaki;
-    }
-
-    & > * > * {
-      border: 1px solid MediumTurquoise;
-    }
-
-    & > * > * > * {
-      border: 1px solid LightSlateGray;
-    }
-
-    & > * > * > * > * {
-      border: 1px solid LightBlue;
-    }
-
-    & > * > * > * > * > * {
-      border: 1px solid MediumSlateBlue;
-    }
-
-    & > * > * > * > * > * > * {
-      border: 1px solid DeepSkyBlue;
-    }
-
-    & > * > * > * > * > * > * > * {
-      border: 1px solid DarkSeaGreen;
-    }
+    & > * { border: 1px solid DarkKhaki; }
+    & > * > * { border: 1px solid MediumTurquoise; }
+    & > * > * > * { border: 1px solid LightSlateGray; }
+    & > * > * > * > * { border: 1px solid LightBlue; }
+    & > * > * > * > * > * { border: 1px solid MediumSlateBlue; }
+    & > * > * > * > * > * > * { border: 1px solid DeepSkyBlue; }
+    & > * > * > * > * > * > * > * { border: 1px solid DarkSeaGreen; }
 
     & img {
       border: 1px solid #f00;

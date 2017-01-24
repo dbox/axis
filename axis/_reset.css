@@ -38,45 +38,45 @@
     }
 
     *, ::before, ::after {
-    	background-repeat: no-repeat;
-    	box-sizing: inherit;
+      background-repeat: no-repeat;
+      box-sizing: inherit;
     }
 
     abbr[title] {
-    	border-bottom: none;
-    	text-decoration: underline;
-    	text-decoration: underline dotted;
+      border-bottom: none;
+      text-decoration: underline;
+      text-decoration: underline dotted;
     }
 
     b, strong {
-    	font-weight: bolder;
+      font-weight: bolder;
     }
 
     a, area, button, input, label, select, summary, textarea, [tabindex] {
-    	-ms-touch-action: manipulation;
-    	touch-action: manipulation;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
     }
 
     [aria-busy="true"] {
-    	cursor: progress;
+      cursor: progress;
     }
 
     [aria-controls] {
-    	cursor: pointer;
+      cursor: pointer;
     }
 
     [aria-hidden="false"][hidden] {
-    	clip: rect(0, 0, 0, 0);
-    	display: inherit;
-    	position: absolute;
+      clip: rect(0, 0, 0, 0);
+      display: inherit;
+      position: absolute;
     }
 
     [aria-hidden="false"][hidden]:focus {
-    	clip: auto;
+      clip: auto;
     }
 
     [aria-disabled] {
-    	cursor: default;
+      cursor: default;
     }
   }
 

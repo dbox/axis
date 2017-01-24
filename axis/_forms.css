@@ -165,7 +165,6 @@
     max-width: var(--input-max-width);
     border-radius: var(--global-border-radius);
     background-color: var(--input-select-bg-color);
-    /*max-width: var(--input-max-width) */
 
     & select {
       width: 100%;
@@ -234,8 +233,14 @@
 
   /* Additive Mixin: Controls
 
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
   Gets your checkboxes and radio buttons looking good as heck across all the
-  browsers.  */
+  browsers.
+
+  todo: Non-additive version.
+  */
   --controls {
     input[type='radio'],
     input[type='checkbox'] {

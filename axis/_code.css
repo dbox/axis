@@ -36,7 +36,7 @@
 
   /* Mixin: Pre Dark
 
-  Dark theme for code blocks.*/
+  Dark theme for code blocks.  Note: must be applied after --pre.*/
   --pre-dark {
     background-color: color(var(--base-gray) lightness(20%));
     color: color(var(--base-gray) lightness(75%));
