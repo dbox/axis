@@ -13,6 +13,12 @@
     margin: var(--default-margin) 0
   }
 
+  /* Additive Mixin: Layout
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' styles layout elements */
   --layout {
     hr {
       @apply --hr

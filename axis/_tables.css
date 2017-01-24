@@ -5,7 +5,7 @@
 :root {
   /* Mixin: Basic Table
 
-  Creates a nice base style for your tables. */
+  Creates a nice basic style for your tables. */
   --table-basic {
     border-collapse: separate;
     border-spacing: 0;
@@ -83,7 +83,8 @@
 
   /* Table utility: Zebra stripes
 
-  Slightly darkens every other row of youur table.
+  Slightly darkens every other row of your table. Note: must be applied after
+  --table-basic or --table-minimal.
   */
   --zebra-stripes {
     & tr:nth-child(odd) td {
@@ -93,7 +94,8 @@
 
   /* Table utility: Hover rows
 
-  Darkens the row you are hovered on for increased readability.
+  Darkens the row you are hovered on for increased readability. Note: must be
+  applied after --table-basic or --table-minimal.
   */
   --hover-rows {
     & tr {
@@ -105,7 +107,12 @@
     }
   }
 
-  /* Addtive mixin: Tables */
+  /* Additive Mixin: Tables
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' styles to tables.  */
   --tables {
     table {
       @apply --table-basic

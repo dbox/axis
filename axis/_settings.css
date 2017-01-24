@@ -3,7 +3,7 @@
   --global-border-radius: 2px;
   --default-border: 1px solid color(var(--base-gray) tint(70%));
   --default-margin: 1.5rem;
-  --default-easing: cubic-bezier(0.250,  0.460, 0.450, 0.940);
+  --default-easing: cubic-bezier(0.250, 0.460, 0.450, 0.940);
   --default-transition-duration: .3s;
 
   /* Default breakpoint (used in --responsive-overflow). For a more robust breakpoint library see xxx. */
@@ -42,9 +42,15 @@
   --button-med-size: .9rem;
   --button-large-size: 1.3rem;
   --button-small-size: .75rem;
-  --button-outline-stroke: 1px;
-  --button-color: var(--color-primary);
   --button-text-color: #fff;
+  --button-bg-color: var(--color-primary);
+
+  /* outline button */
+  --outline-button-stroke: 1px;
+  --outline-button-bg-color: transparent;
+  --outline-button-bg-hover-color: inherit;    
+  --outline-button-stroke-color: var(--base-gray);
+  --outline-button-stroke-hover-color: var(--button-bg-color);
 
 
   /* ---------- Layout ----------- */

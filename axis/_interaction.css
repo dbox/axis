@@ -3,7 +3,9 @@
 /* ----------- */
 
 :root {
-  /* transition preset */
+  /* Mixin: Transition
+
+  Quickly add the default transtion. */
   --transition {
     transition: all var(--default-transition-duration) var(--default-easing)
   }

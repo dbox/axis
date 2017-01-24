@@ -4,7 +4,10 @@
 
 :root {
 
-  /* the button */
+  /* Mixin: Button
+
+  Creates a very basic looking button style, and a good starting point for
+  further styling. */
   --button {
     padding: calc(var(--button-med-size) * .6) calc(var(--button-med-size) * .8);
     font-size: var(--button-med-size);
@@ -15,7 +18,7 @@
     display: inline-block;
     border: var(--button-outline-stroke) solid var(--button-color);
     border-radius: var(--global-border-radius);
-    background-color: var(--button-color);
+    background-color: var(--button-bg-color);
     color: var(--button-text-color);
     user-select: none;
 
@@ -27,28 +30,34 @@
 
   /* Button modifiers */
 
-  /* the button ,larger */
+  /* Mixin: Large button
+
+  Make the default button bigger. Note: must be applied after --button. */
   --button-large {
     padding: calc(var(--button-large-size) * .6) calc(var(--button-large-size));
     font-size: var(--button-large-size);
   }
 
-  /* the button, smaller */
+  /* Mixin: Small button
+
+  Make the default button smaller. Note: must be applied after --button. */
   --button-small {
     padding: calc(var(--button-small-size) * .6) calc(var(--button-small-size) * .8) calc(var(--button-small-size) * .5);
     font-size: var(--button-small-size);
   }
 
-  /* outline button */
+  /* Mixin: Outline button
+
+  Creates an outline-style button. Note: must be applied after --button. */
   --button-outline {
-    background: transparent;
-    color: var(--base-gray);
-    border: var(--button-outline-stroke) solid var(--base-gray);
+    background: var(--outline-button-bg-color);
+    color: var(--outline-button-stroke-color);
+    border: var(--outline-button-stroke) solid var(--outline-button-stroke-color);
 
     &:hover {
-      background: inherit;
-      border: var(--button-outline-stroke) solid var(--button-color);
-      color: var(--button-color);
+      background: var(--outline-button-bg-hover-color);
+      border: var(--outline-button-stroke) solid var(--outline-button-stroke-hover-color);
+      color: var(--outline-button-stroke-hover-color);
     }
   }
 
