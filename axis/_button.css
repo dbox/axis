@@ -72,7 +72,12 @@
     }
   }
 
-  /* additive */
+  /* Additive Mixin: Buttons
+
+  WARNING: Creates classes in your css and styles them - not to be used inside
+  an element.
+
+  Adds Axis' styles to buttons. */
   --buttons {
     button,
     .btn {
