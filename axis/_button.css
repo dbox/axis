@@ -60,7 +60,10 @@
     }
   }
 
-  /* disabled button */
+  /* Mixin: Disabled button
+
+  Sometimes you dont want buttons to be clicked. This is one of those times.
+   Note: must be applied after --button. */
   --button-disabled {
     cursor: not-allowed;
     background-color: color(var(--base-gray) tint(70%));
