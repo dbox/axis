@@ -11,7 +11,7 @@
   --responsive-overflow {
     position: relative;
 
-    @media (--axis-breakpoint) {
+    @media (max-width: 767px) {
       & > * {
         overflow-x: auto;
         display: block;
