@@ -5,11 +5,6 @@
 /* todo: Select Q+A, input active glow, input active arrow */
 
 :root {
-  /* Custom selector: Html5-inputs
-
-  Quickly style all html5 text-only inputs. */
-  @custom-selector :--html5-inputs [type='email'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='url'], [type='color'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='time'], [type='week'];
-
   /* Mixin: Input
   A general purpose mixin for text inputs. Provides an nice attractive default
   style that's easily customizable. */
@@ -32,7 +27,7 @@
     line-height: inherit;
 
     &:hover {
-      border-color: var(--input-border-hover-color)
+      border-color: var(--input-border-hover-color);
     }
 
     &:focus {
@@ -147,11 +142,11 @@
   Apply default styling to fieldsets */
   --fieldset {
     border: var(--fieldset-border);
-    border-radius: var(--global-border-radius)
+    border-radius: var(--global-border-radius);
   }
 
   /* Mixin: Select box
-  
+
   Uniform, cross-browser select-box styling.
   Note: Must be applied to a container wrapping the <select> tag.
   todo: ie 10 + 11 support
@@ -177,7 +172,7 @@
 
       &:focus, &:active {
         border: none;
-        box-shadow: none
+        box-shadow: none;
       }
 
       & option {
@@ -192,7 +187,7 @@
       right: .75em;
       z-index: 2;
       display: none;
-      pointer-events: none
+      pointer-events: none;
     }
 
     @supports ( -webkit-appearance: none ) or ( appearance: none ) or ( ( -moz-appearance: none ) and ( mask-type: alpha ) ) {
@@ -202,7 +197,7 @@
         display: block;
         border-left: var(--input-select-arrow-size) solid transparent;
         border-right: var(--input-select-arrow-size) solid transparent;
-        border-top: var(--input-select-arrow-size) solid var(--input-select-arrow-color)
+        border-top: var(--input-select-arrow-size) solid var(--input-select-arrow-color);
       }
 
       & select {
@@ -220,7 +215,7 @@
       }
 
       &:hover {
-        border-color: var(--input-border-hover-color)
+        border-color: var(--input-border-hover-color);
       }
 
       &:focus {
@@ -431,7 +426,20 @@
 
   Adds default form styling to the appropriate HTML elements. */
   --forms {
-    :--html5-inputs {
+    [type='email'],
+    [type='number'],
+    [type='password'],
+    [type='search'],
+    [type='tel'],
+    [type='text'],
+    [type='url'],
+    [type='color'],
+    [type='date'],
+    [type='datetime'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='time'],
+    [type='week'] {
       @apply --input;
       @apply --autofill;
     }
