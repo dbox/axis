@@ -11,7 +11,7 @@
     border: 1px solid color(var(--base-gray) lightness(85%));
     border-radius: var(--global-border-radius);
     color: var(--color-accent);
-    font-family: var(--monospace);
+    font-family: var(--font-monospace);
     font-size: .8rem;
     padding: .08rem .2rem;
     white-space: normal;
@@ -25,7 +25,7 @@
     border: 1px solid color(var(--base-gray) lightness(80%));
     border-radius: var(--global-border-radius);
     display: block;
-    font-family: var(--monospace);
+    font-family: var(--font-monospace);
     font-size: .8rem;
     line-height: inherit;
     margin: 0 0 var(--default-margin);

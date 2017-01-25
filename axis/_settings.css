@@ -17,7 +17,7 @@
   /* ---------- Typography ----------- */
   --base-font-size: 16px;
   --base-font-weight: normal;
-  --font-stack: var(--sans);
+  --font-stack: var(--font-sans);
   --font-color: color(var(--base-gray) shade(35%));
   --line-height: 1.5;
   --paragraph-line-height: var(--line-height);
@@ -30,10 +30,10 @@
   --blockquote-boder-color: var(--color-primary);
 
   /* Font Stacks */
-  --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --helvetica: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
-  --serif: Georgia, Cambria, 'Times New Roman', Times, serif;
-  --monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-monospace: Monaco, Menlo, Consolas, 'Courier New', monospace;
+  --font-helvetica: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans-serif;
 
   /* ---------- Buttons ----------- */
   --button-text-color: #fff;
