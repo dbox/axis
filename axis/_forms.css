@@ -230,32 +230,16 @@
     }
   }
 
+  /* Mixin: Checkbox
 
-  /* Additive Mixin: Controls
+  Styles checkboxes (and their labels) uniformly across browsers. Apply this
+  to [type='checkbox'] or a class on a checkbox. */
+  --checkbox {
+    box-sizing: border-box;
+    position: absolute;
+    display: none;
 
-  WARNING: Creates classes in your css and styles them - not to be used inside
-  an element.
-
-  Gets your checkboxes and radio buttons looking good as heck across all the
-  browsers.
-
-  todo: Non-additive version.
-  */
-  --controls {
-    input[type='radio'],
-    input[type='checkbox'] {
-      box-sizing: border-box;
-      position: absolute;
-      display: none;
-    }
-
-    input[type='radio'][disabled],
-    input[type='checkbox'][disabled] {
-      cursor: not-allowed;
-    }
-
-    input[type='radio'] + label,
-    input[type='checkbox'] + label {
+    & + label {
       box-sizing: border-box;
       position: relative;
       display: block;
@@ -273,6 +257,7 @@
       }
 
       &:before {
+        border-radius: var(--global-border-radius);
         box-sizing: border-box;
         position: absolute;
         top: 0;
@@ -283,78 +268,14 @@
         content: '';
         transition: border .2s ease;
         border: 1px solid var(--input-control-border);
-        background: var(--input-control)
+        background: var(--input-control);
       }
 
       &:after {
         box-sizing: border-box;
         position: absolute;
         content: '';
-        transition: all .2s ease
-      }
-    }
-
-    input[type='radio'][disabled] + label,
-    input[type='checkbox'][disabled] + label {
-      cursor: not-allowed;
-      color: var(--input-control-disabled);
-
-      &:hover,
-      &:before,
-      &:after {
-        cursor: not-allowed
-      }
-      &:before {
-        border-color: var(--input-control-disabled)
-      }
-    }
-
-    input[type='radio']:checked + label,
-    input[type='checkbox']:checked + label {
-
-      &:after {
-        transform: scale(1);
-      }
-    }
-
-    input[type='radio'] + label {
-      &:before {
-        border-radius: 50%;
-      }
-
-      &:after {
-        top: calc(0.375 * var(--control-label-text-size));
-        left: calc(0.375 * var(--control-label-text-size));
-        width: calc(0.5 * var(--control-label-text-size));
-        height: calc(0.5 * var(--control-label-text-size));
-        border-radius: 50%;
-        background: var(--input-control-active);
-        transform: scale(0);
-      }
-    }
-
-    input[type='radio']:checked + label {
-      &:before {
-        border: 1px solid var(--input-control-active);
-      }
-    }
-
-    input[type='radio']:checked[disabled] + label {
-      &:before {
-        border: 1px solid var(--input-control-disabled-checked);
-      }
-
-      &:after {
-        background: var(--input-control-disabled-checked);
-      }
-    }
-
-    input[type='checkbox'] + label {
-      &:before {
-        border-radius: var(--global-border-radius);
-      }
-
-      &:after {
+        transition: all .2s ease;
         top: calc(0.125 * var(--control-label-text-size));
         left: calc(0.4375 * var(--control-label-text-size));
         width: calc(0.375 * var(--control-label-text-size));
@@ -368,18 +289,34 @@
       }
     }
 
-    input[type='checkbox']:checked + label {
+    &:checked + label {
       &:before {
         border: var(--input-control-active);
         background: var(--input-control-active);
       }
 
       &:after {
-        transform: scale(1) rotate(45deg)
+        transform: scale(1) rotate(45deg);
       }
     }
 
-    input[type='checkbox']:checked[disabled] + label {
+    &[disabled], &[disabled] + label {
+      cursor: not-allowed;
+
+      &:hover, &:before, &:after {
+        cursor: not-allowed;
+      }
+    }
+
+    &[disabled] + label {
+      color: var(--input-control-disabled);
+
+      &:before {
+        border-color: var(--input-control-disabled);
+      }
+    }
+
+    &:checked[disabled] + label {
       &:before {
         border: var(--input-control-disabled-checked);
         background: var(--input-control-disabled-checked);
@@ -387,6 +324,104 @@
     }
   }
 
+
+  /* Mixin: Radio
+
+  Styles radio buttons (and their labels) uniformly across browsers. Apply this
+  to [type='radio'] or a class on a ratio button. */
+  --radio {
+    box-sizing: border-box;
+    position: absolute;
+    display: none;
+
+    & + label {
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+      padding-left: calc(1.875 * var(--control-label-text-size));
+      cursor: pointer;
+      vertical-align: middle;
+      font-size: var(--control-label-text-size);
+      line-height: 1.3em;
+      margin-bottom: calc(0.5 * var(--control-label-text-size));
+
+      &:hover {
+        &:before {
+          border: 1px solid var(--input-control-active);
+        }
+      }
+
+      &:before {
+        border-radius: 50%;
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: calc(1.25 * var(--control-label-text-size));
+        height: calc(1.25 * var(--control-label-text-size));
+        content: '';
+        transition: border .2s ease;
+        border: 1px solid var(--input-control-border);
+        background: var(--input-control);
+      }
+
+      &:after {
+        box-sizing: border-box;
+        position: absolute;
+        content: '';
+        transition: all .2s ease;
+        top: calc(0.375 * var(--control-label-text-size));
+        left: calc(0.375 * var(--control-label-text-size));
+        width: calc(0.5 * var(--control-label-text-size));
+        height: calc(0.5 * var(--control-label-text-size));
+        border-radius: 50%;
+        background: var(--input-control-active);
+        transform: scale(0);
+      }
+    }
+
+    &:checked + label {
+      &:before {
+        border: 1px solid var(--input-control-active);
+      }
+
+      &:after {
+        transform: scale(1);
+      }
+    }
+
+    &[disabled], &[disabled] + label {
+      cursor: not-allowed;
+
+      &:hover, &:before, &:after {
+        cursor: not-allowed;
+      }
+    }
+
+    &:checked[disabled] + label {
+      &:before {
+        border: 1px solid var(--input-control-disabled-checked);
+      }
+
+      &:after {
+        background: var(--input-control-disabled-checked);
+      }
+    }
+  }
+
+  /* Additive Mixin: Controls
+
+  Gets your checkboxes and radio buttons looking good as heck across all the
+  browsers.  */
+  --controls {
+    input[type='checkbox'] {
+      @apply --checkbox;
+    }
+    input[type='radio'] {
+      @apply --radio;
+    }
+  }
 
   /* Additive Mixin: Forms
 
