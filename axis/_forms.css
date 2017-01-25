@@ -151,6 +151,7 @@
   }
 
   /* Mixin: Select box
+  
   Uniform, cross-browser select-box styling.
   Note: Must be applied to a container wrapping the <select> tag.
   todo: ie 10 + 11 support

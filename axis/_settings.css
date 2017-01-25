@@ -6,12 +6,14 @@
   --default-easing: cubic-bezier(0.250, 0.460, 0.450, 0.940);
   --default-transition-duration: .3s;
 
+
   /* ---------- Colors ----------- */
   --base-gray: #767d84; /* Allows all grays to have consistent tint */
   --color-primary: #0074D9;
   --color-accent: #c25;
   --color-warning: #d83030;
   --selection-highlight: color(var(--color-primary) a(15%));
+  --tap-highlight: rgba(0,0,0,0);
 
   /* ---------- Typography ----------- */
   --base-font-size: 16px;

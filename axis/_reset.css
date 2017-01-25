@@ -20,6 +20,18 @@
     }
   }
 
+  /* Additive Mixin: Tap Highlight
+
+  Changes the tap highlight color on mobile webkit devices.
+  Defaults to invisible, but make sure you have clear :hover or :active states
+  on all tappable elements. */
+
+  --tap-highlight {
+    input, textarea, button, select, a {
+      -webkit-tap-highlight-color: var(--tap-highlight);
+    }
+  }
+
   /* Additive Mixin: Sanitize
 
   Global resets and defaults not included in other Axis mixins. Based on
@@ -80,4 +92,11 @@
     }
   }
 
+  /* Additive Mixin: Reset Elements
+
+  Include all resets at once. */
+  --reset-elements {
+    @apply --sanitize;
+    @apply --tap-highlight;
+  }
 }

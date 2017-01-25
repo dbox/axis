@@ -1,0 +1,335 @@
+
+@import 'axis';
+@import '_settings.css';
+@import '_animation.css';
+
+@apply --sanitize;
+@apply --typography;
+@apply --code-blocks;
+@apply --forms;
+@apply --buttons;
+@apply --layout;
+/*@apply --tables;*/
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+/*[type='checkbox'] {
+  @apply --checkbox;
+}
+[type='radio'] {
+  @apply --radio;
+}*/
+/*.btn {
+  margin-right: 3px;
+}*/
+.pre-dark {
+  @apply --pre;
+  @apply --pre-dark;
+}
+
+.github-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.basic-table {
+  @apply --table-basic;
+  @apply --zebra-stripes;
+}
+
+.responsive-overflow {
+  @apply --responsive-overflow;
+}
+.flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.minimal-table {
+  @apply --table-minimal;
+  @apply --hover-rows;
+}
+.version {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: rgba(#fff, .4);
+  font-size: 14px;
+}
+
+.container {
+  text-align: center;
+}
+
+.hero {
+  color: #fff;
+  background: linear-gradient(-90deg,#0073d8,#9b4dca 90%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+
+  & h2 {
+    font-size: .8rem;
+    line-height: 1rem;
+    margin: 1rem 0 3rem;
+  }
+
+  & ul {
+    @apply --reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5%;
+
+
+    & li {
+      @apply --animated;
+      animation-name: fade-in-up;
+      margin-bottom: 20px;
+
+      @media (--medium) {
+        width: calc(50% - 10px);
+
+        &:nth-child(odd) {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    & li {
+      @media (--above-medium) {
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+
+      & a {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0,0,0, .2);
+        font-size: .85rem;
+        width: 100%;
+        color: inherit;
+        border-radius: var(--global-border-radius);
+
+        padding: 20px 0;
+
+        @media (--above-medium) {
+          padding: 40px 0;
+        }
+
+        &:hover {
+          background-color: #fff;
+          color: #f12b77;
+          transform: translateY(-5px) scale(1.1);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+        }
+
+        & span {
+          width: 70px;
+          height: 70px;
+          margin: 0 60px 10px;
+          background-image: url('../img/nav-sprite.png');
+          background-size: 400% auto;
+
+          @media (--medium) {
+            transform: scale(.7);
+            margin-bottom: 0;
+          }
+
+        }
+      }
+      &:first-child{
+        &:hover a span {
+          background-position: 0 -70px;
+        }
+      }
+      &:nth-child(2){
+        & a span {
+          background-position: -70px 0;
+        }
+        &:hover a span {
+          background-position: -70px -70px;
+        }
+      }
+
+      &:nth-child(3){
+        & a span {
+          background-position: -140px 0;
+        }
+        &:hover a span {
+          background-position: -140px -70px;
+        }
+      }
+      &:nth-child(4){
+        & a span {
+          background-position: -210px 0;
+        }
+        &:hover a span {
+          background-position: -210px -70px;
+        }
+      }
+    }
+  }
+}
+
+label {
+  line-height: 1.5rem;
+}
+.form-flex {
+  margin-top: .75rem;
+}
+
+/*iterate animtion for header lis*/
+
+@for $i from 1 to 4 {
+    .hero ul li:nth-child($i) {
+      animation-delay: calc($i * .2s);
+    }
+}
+
+.intro {
+  font-weight: 300;
+  font-size: 26px;
+  max-width: 700px;
+  margin: 50px auto;
+
+  & span {
+    opacity: .5;
+  }
+}
+
+.feature {
+  max-width: 1100px;
+  margin: 70px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0 5%;
+
+  &:nth-child(odd) {
+    & article {
+      padding: 0 5% 0 0;
+      text-align: right;
+      order: 0;
+    }
+  }
+
+  & article {
+    padding: 0 0 0 5%;
+    width: 40%;
+    order: 1;
+
+  }
+
+  & h4 {
+    font-weight: 500;
+  }
+  & figure {
+    border-radius: 5px;
+    width: 60%;
+    background: #282c34;
+    height: 400px;
+  }
+}
+
+.next-up {
+  margin-bottom: 90px;
+
+  & .btn:last-child {
+    margin-left: 10px;
+  }
+}
+.btns div {
+  margin-bottom: 10px;
+}
+footer {
+  max-width: 1100px;
+  margin: 0 auto 20px;
+}
+aside {
+  width: 200px;
+  position: relative;
+  position: fixed;
+  background: #1f282f;
+  background: linear-gradient(-30deg,#0073d8,#9b4dca 90%);
+  color: #fff;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+aside div {
+  padding: 12% 25%;
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+aside ul {
+  @apply --reset-list;
+  width: 200px;
+
+}
+
+aside ul li a {
+  font-size: .8rem;
+  color: inherit;
+  padding: 9px 12px;
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0, .1);
+
+  &:hover {
+    background: rgba(0,0,0, .08);
+  }
+}
+
+section {
+  padding: 40px 80px;
+  max-width: 1300px;
+  margin-left: 200px;
+}
+
+label {
+  padding-right: 10px;
+}
+
+/*Todo add default underlines to axis*/
+p a, blockquote a, .intro a, :--heading ¡a{
+  @apply --hover-underline;
+}
+
+.ellipsis {
+  @apply --ellipsis;
+}
+
+.inline {
+  @apply --inline-list;
+}
+
+.reset {
+  @apply --reset-list;
+}
+.inset {
+  @apply --click-inset;
+}
+
+.shrink {
+  @apply --click-shrink;
+}
+
+.down {
+  @apply --click-down;
+}
+
+.hover-pop {
+  @apply --hover-pop;
+}

@@ -11,7 +11,7 @@
 
 :root {
   --axis-framework {
-    @apply --sanitize;
+    @apply --reset-elements;
     @apply --typography;
     @apply --code-blocks;
     @apply --forms;
