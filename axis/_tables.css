@@ -20,7 +20,7 @@
     & th, & td {
       padding: .5em 1em;
       border-top: var(--table-border);
-      text-align: inherit;      
+      text-align: inherit;
     }
 
     & tr th {
@@ -75,6 +75,7 @@
     & td, & th {
       line-height: var(--line-height);
       padding: .5em 1em;
+      text-align: inherit;      
     }
 
     & td {
