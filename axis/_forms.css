@@ -102,8 +102,7 @@
 
   /* Mixin: File Input
 
-  Styles the file input to look like a normal button.
-  Todo: Fix in all browsers. */
+  Styles the file input to look like a normal button. */
   --file-input {
     box-sizing: border-box;
     font-size: var(--base-font-size);
@@ -148,9 +147,7 @@
   /* Mixin: Select box
 
   Uniform, cross-browser select-box styling.
-  Note: Must be applied to a container wrapping the <select> tag.
-  todo: ie 10 + 11 support
-  todo: focus highlight ? */
+  Note: Must be applied to a container wrapping the <select> tag. */
 
   --select-box {
     box-sizing: border-box;
@@ -161,23 +158,16 @@
     max-width: var(--input-max-width);
     border-radius: var(--global-border-radius);
     background-color: var(--input-select-bg-color);
+    border: var(--fieldset-border);
 
-    & select {
-      width: 100%;
-      margin: 0;
+    &:hover {
+      border-color: var(--input-border-hover-color);
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 1px var(--input-focus-color);
+      border: 1px solid var(--input-focus-color);
       outline: none;
-      padding: var(--input-padding);
-      font-size: var(--base-font-size); /*anything except 16px will create page zoom on ios */
-      border: none;
-
-      &:focus, &:active {
-        border: none;
-        box-shadow: none;
-      }
-
-      & option {
-        padding: .3rem .7rem
-      }
     }
 
     &:after {
@@ -188,44 +178,50 @@
       z-index: 2;
       display: none;
       pointer-events: none;
+      display: block;
+      border-left: var(--input-select-arrow-size) solid transparent;
+      border-right: var(--input-select-arrow-size) solid transparent;
+      border-top: var(--input-select-arrow-size) solid var(--input-select-arrow-color);
     }
 
-    @supports ( -webkit-appearance: none ) or ( appearance: none ) or ( ( -moz-appearance: none ) and ( mask-type: alpha ) ) {
-      border: var(--fieldset-border);
+    & select {
+      width: 100%;
+      margin: 0;
+      outline: none;
+      padding: var(--input-padding);
+      font-size: var(--base-font-size); /*anything except 16px will create page zoom on ios */
+      border: none;
+      border-radius: var(--global-border-radius);
+      border: var(--input-stroke) solid color(var(--base-gray) tint(70%));
+      padding-right: 2em;
+      background: none;
+      border: 0px solid transparent;
+      appearance: none;
+      color: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      text-transform: none;
+      margin: 0;
 
-      &:after {
-        display: block;
-        border-left: var(--input-select-arrow-size) solid transparent;
-        border-right: var(--input-select-arrow-size) solid transparent;
-        border-top: var(--input-select-arrow-size) solid var(--input-select-arrow-color);
+      &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
       }
 
-      & select {
-        border-radius: var(--global-border-radius);
-        border: var(--input-stroke) solid color(var(--base-gray) tint(70%));
-        padding-right: 2em;
-        background: none;
-        border: 0px solid transparent;
-        appearance: none;
-        color: inherit;
-        font-size: inherit;
-        line-height: inherit;
-    	  text-transform: none;
-        margin: 0;
+      &::-ms-expand {
+        display: none;
       }
 
-      &:hover {
-        border-color: var(--input-border-hover-color);
+      &:focus, &:active {
+        border: none;
+        box-shadow: none;
       }
 
-      &:focus {
-        box-shadow: inset 0 0 0 1px var(--input-focus-color);
-        border: 1px solid var(--input-focus-color);
-        outline: none
+      & option {
+        padding: .3rem .7rem
       }
     }
   }
-
   /* Mixin: Checkbox
 
   Styles checkboxes (and their labels) uniformly across browsers. Apply this
