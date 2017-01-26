@@ -91,6 +91,8 @@
   --fieldset-border: var(--default-border);
 
   /* 6. Select box */
+  --input-select-width: var(--input-width);
+  --input-select-min-width: var(--input-min-width);
   --input-select-max-width: var(--input-max-width);
   --input-select-arrow-color: color(var(--base-gray) tint(50%));
   --input-select-arrow-size: .4em;
