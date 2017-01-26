@@ -154,9 +154,9 @@
     box-sizing: border-box;
     position: relative;
     display: inline-block;
-    width: var(--input-width);
-    min-width: var(--input-min-width);
-    max-width: var(--input-max-width);
+    width: var(--input-select-width);
+    min-width: --input-select-min-width;
+    max-width: var(--input-select-max-width);
     border-radius: var(--global-border-radius);
     background-color: var(--input-select-bg-color);
     border: var(--fieldset-border);
@@ -223,7 +223,7 @@
       }
     }
   }
-  
+
   /* Mixin: Checkbox
 
   Styles checkboxes (and their labels) uniformly across browsers. Apply this
