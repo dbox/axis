@@ -102,7 +102,8 @@
 
   /* Mixin: File Input
 
-  Styles the file input to look like a normal button. */
+  Styles the file input to look like a normal button. Note: Currently only works
+  in Webkit. Do not use if you need cross browser support. */
   --file-input {
     box-sizing: border-box;
     font-size: var(--base-font-size);
@@ -462,11 +463,6 @@
 
     input[type='reset'] {
       @apply --button-outline;
-    }
-
-
-    input[type='file'] {
-      @apply --file-input;
     }
 
     /* Radio buttons and Checkboxes */
